@@ -1,0 +1,24 @@
+{
+    "name": "filters-script",
+    "description": "My first extension de prueba.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "content_scripts": [
+      {
+        "js": ["jquery.min.js", "filters-scripts.js"],
+        "matches": [
+          "https://platform.utest.com/testcycles/*/issues"
+        ]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
