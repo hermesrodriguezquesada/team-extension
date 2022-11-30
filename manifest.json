@@ -8,11 +8,33 @@
       "storage",
       "activeTab",
       "scripting",
-      "tabs"
+      "tabs",
+      "tabGroups"
     ],
     "content_scripts": [
       {
-        "js": ["jquery.min.js", "filters-scripts.js"],
+        "js": [
+          "scripts/General/clone-element.js",
+          "scripts/General/color-contrast-css-props.js",
+          "scripts/General/current-focused-element-any-keypress.js",
+          "scripts/General/current-state.js",
+
+          "scripts/HTML/br-finder.js",
+          "scripts/HTML/heading-levels.js",
+          "scripts/HTML/list-listitems.js",
+          "scripts/HTML/live-regions.js",
+          "scripts/HTML/page-title.js",
+          
+          "filters-scripts.js",
+          "scripts/USB/bold-title-slash-separator.js",
+
+          "scripts/Uty/BBVA-Script.js",
+          "scripts/Uty/bold-title-column-separator.js",
+          "scripts/Uty/delete-row-alt-click.js",
+          "scripts/Uty/display-unclaimed-tc.js",
+          "scripts/Uty/mark-row-double-click.js",
+          "scripts/Uty/tc-preview-format.js"
+        ],
         "matches": [
           "https://platform.utest.com/testcycles/*/issues"
         ]
