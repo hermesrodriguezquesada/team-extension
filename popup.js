@@ -149,8 +149,43 @@ function activeMarkRowDobleClick(event) {
 //Script for
 document.getElementById('delete-row-alt-click').addEventListener('click', activeDeleteRow);
 
-function aactiveDeleteRow(event) {
+function activeDeleteRow(event) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {text: "Activar script delete-row-alt-click" });
+  });
+}
+
+//Script for
+document.getElementById('starbucks').addEventListener('click', activeStarbucks);
+
+function activeStarbucks(event) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Activar Starbucks" });
+  });
+}
+
+//Script for
+document.getElementById('utest-no-match-only1').addEventListener('click', activeUtestNoMatch);
+
+function activeUtestNoMatch(event) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Activar Utest no match only1" });
+  });
+}
+
+//Script for
+document.getElementById('utest-view-components1').addEventListener('click', activeUtestViewComponents);
+
+function activeUtestViewComponents(event) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Activar Utest view components" });
+  });
+}
+//Script for
+document.getElementById('filter-issues-per-slot').addEventListener('click', activeUtestFilterIssuesPerSlot);
+
+function activeUtestFilterIssuesPerSlot(event) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Activar Filter issues per slot" });
   });
 }
