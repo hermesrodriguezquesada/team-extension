@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(
     function(msg, sender, sendResponse) {
-      if(msg.text == "Activar Starbucks") {
+      if(msg.text == "Activar Filter issues per slot") {
         // Filter Layout
         const targetElement = document.querySelector("#issueListTitle")
         const newItem = document.createElement("div")
@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener(
         let selectComponent = null
         var index;
 
-        newItem.id = "select-filter-starbucks"
+        newItem.id = "select-filter-script-issues-slot"
         newItem.style.padding = "1em"
         newItem.style.outline = "rgb(6, 107, 177) 1px solid"
 
@@ -19,36 +19,13 @@ chrome.runtime.onMessage.addListener(
         var resultfinal = []
 
         for (var index = 0; index < obtenerDato.length; index++ ){  
-            if(obtenerDato[index].getAttribute('ng-bind')==='row.subject'){
+            if(obtenerDato[index].getAttribute('ng-if')==='!ctrl.parent.insideTestCycle || !ctrl.parent.isFromKnownIssueList(row)'){
                 var result = obtenerDato[index].firstChild.textContent
                 var element = result.split(':');
-                resultfinal.push(element[0])
+                resultfinal.push(element[1]);
             }  
         }
         var unicos = [... new Set(resultfinal)];
-        var unicoscoincidencia = []
-
-        for (index = 0; index < unicos.length; index++ ){
-            unicoscoincidencia[index] = []
-            valor = unicos[index];
-            valor2 = valor.split(' ');
-            for (index1 = index+1; index1 < unicos.length; ){
-                valorlist = unicos[index1];
-                valorlist2 = valorlist.split(' ');
-                if(valor2[0] === valorlist2[0]){
-                if(valor.length > valorlist.length) {
-                        unicoscoincidencia[index].push(valorlist)
-                        unicos = unicos.filter((item) => item !== valorlist);
-                }
-                else{
-                        unicoscoincidencia[index].push(valor)
-                        unicos = unicos.filter((item) => item !== valor);
-                }
-                } else {
-                    index1++;
-                }
-            }
-        }
 
 
         var selectHTML = '<select id="select-component"><option disabled selected>Select a component</option>'
@@ -77,34 +54,37 @@ chrome.runtime.onMessage.addListener(
             let tableRows =   document.getElementsByTagName("tr");
             var tdArray = Array.prototype.slice.call(document.getElementsByTagName("td"))
 
-            // Remove  Verify
+            // Bolded text
             checkbox.addEventListener('change',()=>{
-                let obtenerDatospan = document.getElementsByTagName("span");
-                let obtenerDatostd = document.getElementsByTagName("td");
+            let obtenerDatospan = document.getElementsByTagName("span");
+            let obtenerDatostd = document.getElementsByTagName("td");
+            var result;
+            var result2;
 
                 if ($(checkbox).prop('checked') === true) {
                     for (index = 0; index < obtenerDatospan.length; index++ ){ 
                         if(obtenerDatospan[index].getAttribute('title') === "Verification"){
-                            obtenerDatospan[index].parentNode.parentNode.style.display = 'none';
+                            result = obtenerDatospan[index].parentNode.parentNode.style.display = 'none';
                         }
                     }
                     for (index2 = 0; index2 < obtenerDatostd.length; index2++ ){ 
                         if(obtenerDatostd[index2].getAttribute('data-column-title') =='Verification '){
-                            obtenerDatostd[index2].style.display = 'none';
+                            result2 = obtenerDatostd[index2].style.display = 'none';
                         }
                     }        
-                } else {
+                }else{
                     for (index = 0; index < obtenerDatospan.length; index++ ){ 
                         if(obtenerDatospan[index].getAttribute('title') === "Verification"){
-                            obtenerDatospan[index].parentNode.parentNode.style.display = '';
+                            result = obtenerDatospan[index].parentNode.parentNode.style.display = '';
                         }
                     }
                     for (index2 = 0; index2 < obtenerDatostd.length; index2++ ){ 
                         if(obtenerDatostd[index2].getAttribute('data-column-title') =='Verification '){
-                            obtenerDatostd[index2].style.display = '';
+                            result2 = obtenerDatostd[index2].style.display = '';
                         }
-                    }    
+                    } 
                 }
+            
             })
 
             // Display issues per selected component
@@ -133,17 +113,8 @@ chrome.runtime.onMessage.addListener(
                 for (index = 1; index < tableRows.length; index++ ){    
                     title = tableRows[index].children[1].children[0].children[0].innerText
                     if(!title.includes(selectedValue)) {
-                        encontrado = false;
-                        for (indexC = 0; indexC < unicoscoincidencia[selectElement.selectedIndex-1].length; indexC++) {
-                            if (title.includes(unicoscoincidencia[selectElement.selectedIndex-1][indexC]))
-                                encontrado = true; 
-                        }
-                        if (encontrado)
-                            tableRows[index].style.display = 'none'
-                        else {
-                            tableRows[index].style.display = 'table-row'
-                            issuesCount++
-                        }
+                        tableRows[index].style.display = 'table-row'
+                        issuesCount++;
                     } else 
                         tableRows[index].style.display = 'none'
                 }
@@ -170,26 +141,18 @@ chrome.runtime.onMessage.addListener(
                 for (index = 1; index < tableRows.length; index++ ){    
                     title = tableRows[index].children[1].children[0].children[0].innerText
                     if(!title.includes(selectedValue)) {
-                        encontrado = false;
-                        for (indexC = 0; indexC < unicoscoincidencia[selectElement.selectedIndex-1].length; indexC++) {
-                            if(title.includes(unicoscoincidencia[selectElement.selectedIndex-1][indexC])) {
-                                encontrado = true;
-                                break;
-                            }
-                        }
-                        if (!encontrado) 
-                            tableRows[index].style.display = 'none'
-                        else
-                            issuesCount++;
-                    } else 
-                        issuesCount++
+                        tableRows[index].style.display = 'none'
+                    } else
+                        issuesCount++;
                 }
                 itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.'
             })
         })
+
       }
-      else if(msg.text == "Desactivar Starbucks") {
-        $("#select-filter-starbucks").remove();
+      else if(msg.text == "Desactivar Filter issues per slot") {
+        $("#select-filter-script-issues-slot").remove();
         }
     }
 )
+

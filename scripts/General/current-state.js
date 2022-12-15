@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(
     function(msg, sender, sendResponse) {
-      if(msg.text == "Activar script current-focused") {
+      if(msg.text == "Activar script current-state") {
         //   LOG EXPANDED/COLLAPESED STATE CHANGE
         /*
         1-Inspeccionar el button que se va a testear

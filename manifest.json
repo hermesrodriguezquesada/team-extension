@@ -11,9 +11,13 @@
       "tabs",
       "tabGroups"
     ],
+    "background": {
+      "service_worker": "background.js"
+    },
     "content_scripts": [
       {
         "js": [
+          "jquery.min.js",
           "scripts/General/clone-element.js",
           "scripts/General/color-contrast-css-props.js",
           "scripts/General/current-focused-element-any-keypress.js",
@@ -24,7 +28,7 @@
           "scripts/HTML/list-listitems.js",
           "scripts/HTML/live-regions.js",
           "scripts/HTML/page-title.js",
-          
+
           "filters-scripts.js",
           "scripts/USB/bold-title-slash-separator.js",
 
@@ -33,7 +37,11 @@
           "scripts/Uty/delete-row-alt-click.js",
           "scripts/Uty/display-unclaimed-tc.js",
           "scripts/Uty/mark-row-double-click.js",
-          "scripts/Uty/tc-preview-format.js"
+          "scripts/Uty/tc-preview-format.js",
+          "scripts/Uty/Starbucks.js",
+          "scripts/Uty/Utest-no-match-only1.js",
+          "scripts/Uty/Utest-view-components-1.js",
+          "scripts/Uty/Filter-issues-per-slot.js"
         ],
         "matches": [
           "https://platform.utest.com/testcycles/*/issues"

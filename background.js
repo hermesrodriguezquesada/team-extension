@@ -1,4 +1,4 @@
-chrome.app.runtime.onLaunched.addListener(function(tab){
-    chrome.app.executeScript(null,{file:"filters-scripts.js"})
-  })
+chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+    localStorage.removeItem("btnScrpit1");
+})
 

@@ -1,0 +1,32 @@
+.nav-tabs{
+    --bs-nav-tabs-border-width: none !important;
+    --bs-nav-tabs-border-color: none !important;
+}
+.nav{
+    --bs-nav-link-color: black !important;
+    font-weight: bolder !important;
+}
+.nav-tabs .nav-link {
+    border: none!important;
+    background-color: none!important;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: black!important;
+  }
+  
+li.nav-item a.active {
+    background-color: transparent !important;
+}
+
+li.nav-item a {
+    background-color: white !important;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid black !important;
+}
+
+.current-focused {
+    border: 3px solid black !important;
+}
