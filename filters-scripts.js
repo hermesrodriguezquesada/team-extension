@@ -99,16 +99,18 @@ chrome.runtime.onMessage.addListener(
                     
                 })
 
-                // Display issues per selected component
-                clearButton.addEventListener('click',()=>{
-                    // Showing all issues
-                    console.log('showing ....')
-                    for (index = 1; index < tableRows.length; index++ ){ 
-                        tableRows[index].style.display = 'table-row'
-                    }
-                    selectComponent.selectedIndex = 0;
-
-                })
+				// Display issues per selected component
+				clearButton.addEventListener('click',()=>{
+					// Showing all issues
+					let issuesCount = 0
+					console.log('showing ....')
+					for (index = 1; index < tableRows.length; index++ ){ 
+						tableRows[index].style.display = 'table-row'
+						issuesCount++
+					}
+					selectComponent.selectedIndex = 0;
+					itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>all except '+ tableRows.length + '</b> component.'
+				})
             
                 // Display issues of all components except selected component
                 removeButton.addEventListener('click',()=>{

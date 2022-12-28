@@ -1,3 +1,14 @@
+/*UTest
+- Filter issues per reproductions having the following conditions:
+2-Display issues that have more than 1 reproduction and its states is 'Pending Approval', 'Approved',
+'Pending rejection','Rejected'. 
+
+UTest
+- Filtrar emisiones por reproducciones que tengan las siguientes condiciones:
+2-Mostrar incidencias que tengan más de 1 reproducción y sus estados sean 'Pendiente de aprobación', 'Aprobado',
+Pendiente de rechazo", "Rechazada".
+*/
+
 chrome.runtime.onMessage.addListener(
     function(msg, sender, sendResponse) {
       if(msg.text == "Activar Utest view components") {
