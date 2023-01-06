@@ -44,7 +44,8 @@
           "scripts/Uty/Filter-issues-per-slot.js"
         ],
         "matches": [
-          "https://platform.utest.com/testcycles/*/issues"
+			"https://*/*/*/*",
+			"https://platform.utest.com/testcycles/*/issues"
         ]
       }
     ],
