@@ -1,55 +1,59 @@
 {
-    "name": "filters-script",
-    "description": "My first extension de prueba.",
-    "version": "1.0",
-    "manifest_version": 3,
-    "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
-    "permissions": [
-      "storage",
-      "activeTab",
-      "scripting",
-      "tabs",
-      "tabGroups"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "js": [
-          "jquery.min.js",
-          "scripts/General/clone-element.js",
-          "scripts/General/color-contrast-css-props.js",
-          "scripts/General/current-focused-element-any-keypress.js",
-          "scripts/General/current-state.js",
+  "name": "filters-script",
+  "description": "My first extension de prueba.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
+  "permissions": [
+    "*://*/*", 
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "tabGroups"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "jquery.min.js",
+        "scripts/General/clone-element.js",
+        "scripts/General/color-contrast-css-props.js",
+        "scripts/General/current-focused-element-any-keypress.js",
+        "scripts/General/current-state.js",
 
-          "scripts/HTML/br-finder.js",
-          "scripts/HTML/heading-levels.js",
-          "scripts/HTML/list-listitems.js",
-          "scripts/HTML/live-regions.js",
-          "scripts/HTML/page-title.js",
+        "scripts/HTML/br-finder.js",
+        "scripts/HTML/heading-levels.js",
+        "scripts/HTML/list-listitems.js",
+        "scripts/HTML/live-regions.js",
+        "scripts/HTML/page-title.js",
 
-          "filters-scripts.js",
-          "scripts/USB/bold-title-slash-separator.js",
+        "filters-scripts.js",
+        "scripts/USB/bold-title-slash-separator.js",
 
-          "scripts/Uty/BBVA-Script.js",
-          "scripts/Uty/bold-title-column-separator.js",
-          "scripts/Uty/delete-row-alt-click.js",
-          "scripts/Uty/display-unclaimed-tc.js",
-          "scripts/Uty/mark-row-double-click.js",
-          "scripts/Uty/tc-preview-format.js",
-          "scripts/Uty/Starbucks.js",
-          "scripts/Uty/Utest-no-match-only1.js",
-          "scripts/Uty/Utest-view-components-1.js",
-          "scripts/Uty/Filter-issues-per-slot.js"
-        ],
-        "matches": [
-			"https://*/*/*/*",
-			"https://platform.utest.com/testcycles/*/issues"
-        ]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html"
+        "scripts/Uty/BBVA-Script.js",
+        "scripts/Uty/bold-title-column-separator.js",
+        "scripts/Uty/delete-row-alt-click.js",
+        "scripts/Uty/display-unclaimed-tc.js",
+        "scripts/Uty/mark-row-double-click.js",
+        "scripts/Uty/tc-preview-format.js",
+        "scripts/Uty/Starbucks.js",
+        "scripts/Uty/Reports-with-plus-1.js",
+        "scripts/Uty/Utest-view-components-1.js",
+        "scripts/Uty/Filter-issues-per-slot.js",
+        "scripts/Uty/Other-bugs-others.js",
+        "scripts/Uty/Other-bugs.js"
+      ],
+      "matches": [
+        "https://*/*/*/*",
+        "https://platform.utest.com/testcycles/*/issues"
+        
+      ]
     }
+  ],
+  "action": {
+    "default_popup": "popup.html"
   }
+}

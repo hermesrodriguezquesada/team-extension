@@ -195,7 +195,7 @@ function activeBoldTitle(event) {
   var check = $(this)
     if (check.prop('checked') === true) {
       chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {text: "Activar script 1" });
+        chrome.tabs.sendMessage(tabs[0].id, {text: "Activar script bold title slash separator" });
       });
       localStorage.setItem("bold-title-slash-separator", true);
     } else {
@@ -349,22 +349,22 @@ function activeStarbucks(event) {
 }
 
 //Script for Utest Only1
-document.getElementById('utest-no-match-only1').addEventListener('click', activeUtestNoMatch);
-if (localStorage.getItem("utest-no-match-only1") == 'true') {
-  document.getElementById('utest-no-match-only1').checked = true;
+document.getElementById('reports-with-plus-1').addEventListener('click', activeUtestNoMatch);
+if (localStorage.getItem("reports-with-plus-1") == 'true') {
+  document.getElementById('reports-with-plus-1').checked = true;
 }
 function activeUtestNoMatch(event) {
   var check = $(this)
   if (check.prop('checked') === true) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {text: "Activar Utest no match only1" });
+      chrome.tabs.sendMessage(tabs[0].id, {text: "Activar reports-with-plus-1" });
     });
-    localStorage.setItem("utest-no-match-only1", true);
+    localStorage.setItem("reports-with-plus-1", true);
   } else {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar Utest no match only1" });
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar reports-with-plus-1" });
     });
-    localStorage.setItem("utest-no-match-only1", false);
+    localStorage.setItem("reports-with-plus-1", false);
   }
 }
 
@@ -405,5 +405,47 @@ function activeUtestFilterIssuesPerSlot(event) {
     chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar Filter issues per slot" });
     });
     localStorage.setItem("#filter-issues-per-slot", false);
+  }
+}
+
+//Script for Others Bugs
+document.getElementById('others-bugs').addEventListener('click', activeUtestOthersBugs);
+if (localStorage.getItem("others-bugs") == 'true') {
+  document.getElementById('others-bugs').checked = true;
+}
+
+function activeUtestOthersBugs(event) {
+  var check = $(this)
+  if (check.prop('checked') === true) {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Activar others bugs" });
+    });
+    localStorage.setItem("others-bugs", true);
+  } else {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar others bugs" });
+    });
+    localStorage.setItem("#others-bugs", false);
+  }
+}
+
+//Script for Others Bugs
+document.getElementById('other-bugs-others').addEventListener('click', activeUtestOtherBugsOthers);
+if (localStorage.getItem("other-bugs-others") == 'true') {
+  document.getElementById('other-bugs-others').checked = true;
+}
+
+function activeUtestOtherBugsOthers(event) {
+  var check = $(this)
+  if (check.prop('checked') === true) {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Activar other bugs others" });
+    });
+    localStorage.setItem("other-bugs-others", true);
+  } else {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar other bugs others" });
+    });
+    localStorage.setItem("#other-bugs-others", false);
   }
 }
