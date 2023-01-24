@@ -4,8 +4,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "icons": { "16": "calculator-16.png", "128": "calculator-128.png" },
-  "permissions": [
-    "*://*/*", 
+  "permissions": [ 
     "storage",
     "activeTab",
     "scripting",
@@ -37,14 +36,14 @@
         "scripts/Uty/bold-title-column-separator.js",
         "scripts/Uty/delete-row-alt-click.js",
         "scripts/Uty/display-unclaimed-tc.js",
-        "scripts/Uty/mark-row-double-click.js",
-        "scripts/Uty/tc-preview-format.js",
-        "scripts/Uty/Starbucks.js",
-        "scripts/Uty/Reports-with-plus-1.js",
-        "scripts/Uty/Utest-view-components-1.js",
         "scripts/Uty/Filter-issues-per-slot.js",
+        "scripts/Uty/mark-row-double-click.js",
         "scripts/Uty/Other-bugs-others.js",
-        "scripts/Uty/Other-bugs.js"
+        "scripts/Uty/Others-bugs.js",
+        "scripts/Uty/Starbucks.js",
+        "scripts/Uty/tc-preview-format.js",
+        "scripts/Uty/Utest-no-match-only1.js",
+        "scripts/Uty/Utest-view-components-1.js"
       ],
       "matches": [
         "https://*/*/*/*",
