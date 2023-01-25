@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(
     function(msg, sender, sendResponse) {
-      if(msg.text == "Activar script current-focused") {
+      if(msg.text == "Activar script bold-title-column-separator") {
         // BOLD TITLES in platforms
         var index;
         var first;
@@ -23,6 +23,19 @@ chrome.runtime.onMessage.addListener(
             }
 
         }
-      }
+      }else if(msg.text == "Desactivar script bold-title-column-separator") {
+        var index;
+        var first;
+        var second;
+        let obtenerDato = document.getElementsByTagName("td");
+
+        for (index = 0; index < obtenerDato.length; index++ ){    
+            if(obtenerDato[index].getAttribute('data-column-title')=='Title '){
+            first= obtenerDato[index].childNodes;    
+            second = first[3].childNodes; 
+            second[2].innerHTML = second[2].innerHTML.replace('<b>','').replace('</b>','')
+            }
+        }
+    }
     }
 )

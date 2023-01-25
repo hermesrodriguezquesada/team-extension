@@ -20,7 +20,7 @@ function activeCurrentFocused(event) {
     }
 }
 
-//Script for
+//Script for clone-element
 document.getElementById('clone-element').addEventListener('click', activeCloneElement);
 if (localStorage.getItem("clone-element") == 'true') {
   document.getElementById('clone-element').checked = true;
@@ -38,7 +38,7 @@ function activeCloneElement(event) {
     }
 }
 
-//Script for
+//Script for color-contrast-css-props
 document.getElementById('color-contrast-css-props').addEventListener('click', activeColorContrast);
 if (localStorage.getItem("color-contrast-css-props") == 'true') {
   document.getElementById('color-contrast-css-props').checked = true;
@@ -56,7 +56,7 @@ function activeColorContrast(event) {
     }
 }
 
-//Script for 
+//Script for current-state
 document.getElementById('current-state').addEventListener('click', activeCurrentState);
 if (localStorage.getItem("current-state") == 'true') {
   document.getElementById('current-state').checked = true;
@@ -75,7 +75,7 @@ function activeCurrentState(event) {
 }
 
 //HTML
-//Script for 
+//Script for heading-levels
 document.getElementById('heading-levels').addEventListener('click', activeHeadingLevels);
 if (localStorage.getItem("heading-levels") == 'true') {
   document.getElementById('heading-levels').checked = true;
@@ -93,7 +93,7 @@ function activeHeadingLevels(event) {
     }
 }
 
-//Script for 
+//Script for br-finder
 document.getElementById('br-finder').addEventListener('click', activeBrFinder);
 if (localStorage.getItem("br-finder") == 'true') {
   document.getElementById('br-finder').checked = true;
@@ -111,7 +111,7 @@ function activeBrFinder(event) {
   }
 }
 
-//Script for 
+//Script for list-listitems
 document.getElementById('list-listitems').addEventListener('click', activeListListItems);
   if (localStorage.getItem("list-listitems") == 'true') {
     document.getElementById('list-listitems').checked = true;
@@ -129,7 +129,7 @@ document.getElementById('list-listitems').addEventListener('click', activeListLi
     }
 }
 
-//Script for 
+//Script for live-regions
 document.getElementById('live-regions').addEventListener('click', activeLiveRegions);
 if (localStorage.getItem("live-regions") == 'true') {
   document.getElementById('live-regions').checked = true;
@@ -147,7 +147,7 @@ function activeLiveRegions(event) {
   }
 }
 
-//Script for 
+//Script for page-title
 document.getElementById('page-title').addEventListener('click', activePageTitle);
   if (localStorage.getItem("page-title") == 'true') {
     document.getElementById('page-title').checked = true;
@@ -166,7 +166,7 @@ document.getElementById('page-title').addEventListener('click', activePageTitle)
   }
 
 //USBank
-//Script-Mio
+//Script-Mio btnScrpit1
 document.getElementById('btnScrpit1').addEventListener('click', activeScrpit1);
 if (localStorage.getItem("btnScrpit1") == 'true') {
   document.getElementById('btnScrpit1').checked = true;
@@ -186,7 +186,8 @@ function activeScrpit1(event) {
       localStorage.setItem("btnScrpit1", false);
     }
 }
-//Script for 
+
+//Script for bold-title-slash-separator
 document.getElementById('bold-title-slash-separator').addEventListener('click', activeBoldTitle);
 if (localStorage.getItem("bold-title-slash-separator") == 'true') {
   document.getElementById('bold-title-slash-separator').checked = true;
@@ -207,7 +208,7 @@ function activeBoldTitle(event) {
 }
 
 //UTest
-//Script for
+//Script for bold-title-column-separator
 document.getElementById('bold-title-column-separator').addEventListener('click', activeBoldTitleColumn);
   if (localStorage.getItem("bold-title-column-separator") == 'true') {
     document.getElementById('bold-title-column-separator').checked = true;
@@ -227,7 +228,7 @@ document.getElementById('bold-title-column-separator').addEventListener('click',
       }
   }
 
-//Script for
+//Script for BBVA-Scripts
 document.getElementById('BBVA-Scripts').addEventListener('click', activeBbvaScripts);
   if (localStorage.getItem("BBVA-Scripts") == 'true') {
     document.getElementById('BBVA-Scripts').checked = true;
@@ -247,7 +248,7 @@ document.getElementById('BBVA-Scripts').addEventListener('click', activeBbvaScri
       }
   }
 
-//Script for
+//Script for display-unclaimed-tc
 document.getElementById('display-unclaimed-tc').addEventListener('click', activeDisplayUnclaimed);
 if (localStorage.getItem("display-unclaimed-tc") == 'true') {
   document.getElementById('display-unclaimed-tc').checked = true;
@@ -267,7 +268,7 @@ function activeDisplayUnclaimed(event) {
     }
 }
 
-//Script for
+//Script for tc-preview-format
 document.getElementById('tc-preview-format').addEventListener('click', activeTcPreviewFormat);
 if (localStorage.getItem("tc-preview-format") == 'true') {
   document.getElementById('tc-preview-format').checked = true;
@@ -286,7 +287,8 @@ function activeTcPreviewFormat(event) {
       localStorage.setItem("tc-preview-format", false);
     }
 }
-//Script for
+
+//Script for mark-row-double-click
 document.getElementById('mark-row-double-click').addEventListener('click', activeMarkRowDobleClick);
 if (localStorage.getItem("mark-row-double-click") == 'true') {
   document.getElementById('mark-row-double-click').checked = true;
@@ -306,7 +308,7 @@ function activeMarkRowDobleClick(event) {
   }
 }
 
-//Script for
+//Script for delete-row-alt-click
 document.getElementById('delete-row-alt-click').addEventListener('click', activeDeleteRow);
 if (localStorage.getItem("delete-row-alt-click") == 'true') {
   document.getElementById('delete-row-alt-click').checked = true;
@@ -348,7 +350,7 @@ function activeStarbucks(event) {
 
 }
 
-//Script for Utest Only1
+//Script for Utest Only1 - reports-with-plus-1
 document.getElementById('reports-with-plus-1').addEventListener('click', activeUtestNoMatch);
 if (localStorage.getItem("reports-with-plus-1") == 'true') {
   document.getElementById('reports-with-plus-1').checked = true;
@@ -368,7 +370,7 @@ function activeUtestNoMatch(event) {
   }
 }
 
-//Script for Utest-View-Component
+//Script for Utest-View-Component - utest-view-components1
 document.getElementById('utest-view-components1').addEventListener('click', activeUtestViewComponents);
 if (localStorage.getItem("utest-view-components1") == 'true') {
   document.getElementById('utest-view-components1').checked = true;
@@ -387,7 +389,8 @@ function activeUtestViewComponents(event) {
     localStorage.setItem("utest-view-components1", false);
   }
 }
-//Script for Filter-Issues-Per-Slot
+
+//Script for Filter-Issues-Per-Slot - filter-issues-per-slot
 document.getElementById('filter-issues-per-slot').addEventListener('click', activeUtestFilterIssuesPerSlot);
 if (localStorage.getItem("filter-issues-per-slot") == 'true') {
   document.getElementById('filter-issues-per-slot').checked = true;
@@ -429,7 +432,7 @@ function activeUtestOthersBugs(event) {
   }
 }
 
-//Script for Others Bugs
+//Script for Others Bugs - other-bugs-others
 document.getElementById('other-bugs-others').addEventListener('click', activeUtestOtherBugsOthers);
 if (localStorage.getItem("other-bugs-others") == 'true') {
   document.getElementById('other-bugs-others').checked = true;
