@@ -11,7 +11,7 @@ UTest
  
 chrome.runtime.onMessage.addListener(
   function(msg, sender, sendResponse) {
-    if(msg.text == "Activar Utest no match only1") {
+    if(msg.text == "Activar reports-with-plus-1") {
       let obtenerDatos = document.getElementsByTagName("span");
       var result;
       var result2=[];

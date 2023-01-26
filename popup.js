@@ -168,24 +168,23 @@ document.getElementById('page-title').addEventListener('click', activePageTitle)
 //USBank
 //Script-Mio btnScrpit1
 document.getElementById('btnScrpit1').addEventListener('click', activeScrpit1);
-if (localStorage.getItem("btnScrpit1") == 'true') {
-  document.getElementById('btnScrpit1').checked = true;
-}
-
-function activeScrpit1(event) {
-  var check = $(this)
-    if (check.prop('checked') === true) {
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {text: "Activar script 1" });
-      });
-      localStorage.setItem("btnScrpit1", true);
-    } else {
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar script 1" });
-      });
-      localStorage.setItem("btnScrpit1", false);
-    }
-}
+  if (localStorage.getItem("btnScrpit1") == 'true') {
+    document.getElementById('btnScrpit1').checked = true;
+  }
+  function activeScrpit1(event) {
+    var check = $(this)
+      if (check.prop('checked') === true) {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          chrome.tabs.sendMessage(tabs[0].id, {text: "Activar script 1" });
+        });
+        localStorage.setItem("btnScrpit1", true);
+      } else {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+          chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar script 1" });
+        });
+        localStorage.setItem("btnScrpit1", false);
+      }
+  }
 
 //Script for bold-title-slash-separator
 document.getElementById('bold-title-slash-separator').addEventListener('click', activeBoldTitle);
@@ -333,7 +332,6 @@ document.getElementById('starbucks').addEventListener('click', activeStarbucks);
 if (localStorage.getItem("starbucks") == 'true') {
   document.getElementById('starbucks').checked = true;
 }
-
 function activeStarbucks(event) {
   var check = $(this)
   if (check.prop('checked') === true) {
@@ -395,7 +393,6 @@ document.getElementById('filter-issues-per-slot').addEventListener('click', acti
 if (localStorage.getItem("filter-issues-per-slot") == 'true') {
   document.getElementById('filter-issues-per-slot').checked = true;
 }
-
 function activeUtestFilterIssuesPerSlot(event) {
   var check = $(this)
   if (check.prop('checked') === true) {
@@ -416,7 +413,6 @@ document.getElementById('others-bugs').addEventListener('click', activeUtestOthe
 if (localStorage.getItem("others-bugs") == 'true') {
   document.getElementById('others-bugs').checked = true;
 }
-
 function activeUtestOthersBugs(event) {
   var check = $(this)
   if (check.prop('checked') === true) {
@@ -437,7 +433,6 @@ document.getElementById('other-bugs-others').addEventListener('click', activeUte
 if (localStorage.getItem("other-bugs-others") == 'true') {
   document.getElementById('other-bugs-others').checked = true;
 }
-
 function activeUtestOtherBugsOthers(event) {
   var check = $(this)
   if (check.prop('checked') === true) {
