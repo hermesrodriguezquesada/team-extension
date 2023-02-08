@@ -408,6 +408,26 @@ function activeUtestFilterIssuesPerSlot(event) {
   }
 }
 
+//Script for Filter-selected-issues
+document.getElementById('filter-selected-issues').addEventListener('click', activeUtestFilterSelectedIssues);
+if (localStorage.getItem("filter-selected-issues") == 'true') {
+  document.getElementById('filter-selected-issues').checked = true;
+}
+function activeUtestFilterSelectedIssues(event) {
+  var check = $(this)
+  if (check.prop('checked') === true) {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Activar filter selected issues" });
+    });
+    localStorage.setItem("filter-selected-issues", true);
+  } else {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {text: "Desactivar filter selected issues" });
+    });
+    localStorage.setItem("#filter-selected-issues", false);
+  }
+}
+
 //Script for Others Bugs
 document.getElementById('others-bugs').addEventListener('click', activeUtestOthersBugs);
 if (localStorage.getItem("others-bugs") == 'true') {

@@ -40,6 +40,7 @@
         "scripts/Uty/delete-row-alt-click.js",
         "scripts/Uty/display-unclaimed-tc.js",
         "scripts/Uty/Filter-issues-per-slot.js",
+        "scripts/Uty/filter-selected-issues.js",
         "scripts/Uty/mark-row-double-click.js",
         "scripts/Uty/Other-bugs-others.js",
         "scripts/Uty/Others-bugs.js",
